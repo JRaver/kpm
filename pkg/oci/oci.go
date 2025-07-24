@@ -136,7 +136,7 @@ func NewOciClientWithOpts(opts ...OciClientOption) (*OciClient, error) {
 	ctx := context.Background()
 	client.repo.Client = &remoteauth.Client{
 		Client:     customClient,
-		Cache:      remoteauth.DefaultCache,
+		Cache:      nil,
 		Credential: remoteauth.StaticCredential(client.repo.Reference.Host(), *client.cred),
 	}
 
